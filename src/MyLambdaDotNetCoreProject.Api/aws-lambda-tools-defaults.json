@@ -1,0 +1,18 @@
+
+{
+    "Information" : [
+        "This file provides default values for the deployment wizard inside Visual Studio and the AWS Lambda commands added to the .NET Core CLI.",
+        "To learn more about the Lambda commands with the .NET Core CLI execute the following command at the command line in the project root directory.",
+        "dotnet lambda help",
+        "All the command line options for the Lambda command can be specified in this file."
+    ],
+    "profile"     : "dasein",
+    "region"      : "ap-northeast-2",
+    "configuration" : "Release",
+    "s3-prefix"     : "dotnetcore21/",
+    "s3-bucket"     : "dotnetcore2.1-lambda-sample",
+    "stack-name"    : "dotnetcore2-lambda-sample",
+    "template"      : "serverless.template",
+    "template-parameters" : "\"appsetting\"=\"Production\"",
+    "framework"           : "netcoreapp2.1"
+}
