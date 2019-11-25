@@ -1,17 +1,21 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29519.87
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.136
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyLambdaDotNetCoreProject.Api", "src\MyLambdaDotNetCoreProject.Api\MyLambdaDotNetCoreProject.Api.csproj", "{5B3ACD07-A7E7-4154-9117-7757CA16EEF5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{FD482984-1949-4991-AD3B-8DFFFA81AF17}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyLambdaDotNetCoreProject.Application", "src\MyLambdaDotNetCoreProject.Application\MyLambdaDotNetCoreProject.Application.csproj", "{1125D654-FB42-4018-BF40-5B75CF02E9F4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyLambdaDotNetCoreProject.Application", "src\MyLambdaDotNetCoreProject.Application\MyLambdaDotNetCoreProject.Application.csproj", "{1125D654-FB42-4018-BF40-5B75CF02E9F4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyLambdaDotNetCoreProject.Domain", "src\MyLambdaDotNetCoreProject.Domain\MyLambdaDotNetCoreProject.Domain.csproj", "{FC166E39-3D87-4E04-BC73-CC9F67C30777}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyLambdaDotNetCoreProject.Domain", "src\MyLambdaDotNetCoreProject.Domain\MyLambdaDotNetCoreProject.Domain.csproj", "{FC166E39-3D87-4E04-BC73-CC9F67C30777}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyLambdaDotNetCoreProject.Infrastructure", "src\MyLambdaDotNetCoreProject.Infrastructure\MyLambdaDotNetCoreProject.Infrastructure.csproj", "{272736D6-B124-4D4E-8835-DEC8ABC88040}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyLambdaDotNetCoreProject.Infrastructure", "src\MyLambdaDotNetCoreProject.Infrastructure\MyLambdaDotNetCoreProject.Infrastructure.csproj", "{272736D6-B124-4D4E-8835-DEC8ABC88040}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{6B217968-4A53-47F9-83FF-473628ADD6A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyLambdaDotNetCoreProject.Tests", "test\MyLambdaDotNetCoreProject.Tests\MyLambdaDotNetCoreProject.Tests.csproj", "{92ECBDFC-A19E-4DA4-9E19-F6C1DBAAAC85}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,6 +39,10 @@ Global
 		{272736D6-B124-4D4E-8835-DEC8ABC88040}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{272736D6-B124-4D4E-8835-DEC8ABC88040}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{272736D6-B124-4D4E-8835-DEC8ABC88040}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92ECBDFC-A19E-4DA4-9E19-F6C1DBAAAC85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92ECBDFC-A19E-4DA4-9E19-F6C1DBAAAC85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92ECBDFC-A19E-4DA4-9E19-F6C1DBAAAC85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92ECBDFC-A19E-4DA4-9E19-F6C1DBAAAC85}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -44,6 +52,7 @@ Global
 		{1125D654-FB42-4018-BF40-5B75CF02E9F4} = {FD482984-1949-4991-AD3B-8DFFFA81AF17}
 		{FC166E39-3D87-4E04-BC73-CC9F67C30777} = {FD482984-1949-4991-AD3B-8DFFFA81AF17}
 		{272736D6-B124-4D4E-8835-DEC8ABC88040} = {FD482984-1949-4991-AD3B-8DFFFA81AF17}
+		{92ECBDFC-A19E-4DA4-9E19-F6C1DBAAAC85} = {6B217968-4A53-47F9-83FF-473628ADD6A0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5FBE76BE-DFEB-41B4-BB1E-F0D421EE4243}
