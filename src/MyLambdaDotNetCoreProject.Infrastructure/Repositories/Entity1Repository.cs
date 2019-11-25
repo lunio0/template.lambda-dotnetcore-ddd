@@ -1,11 +1,11 @@
-﻿using MyLambdaDotNetCoreProject.Domain.Aggregate.Entity1Aggregate;
+﻿using MyLambdaDotNetCoreProject.Domain.Aggregates.Entity1Aggregate;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MyLambdaDotNetCoreProject.Infrastructure.Repository
+namespace MyLambdaDotNetCoreProject.Infrastructure.Repositories
 {
     public class Entity1Repository : IEntity1Repository
     {
@@ -18,10 +18,10 @@ namespace MyLambdaDotNetCoreProject.Infrastructure.Repository
         async Task<Entity1> IEntity1Repository.RetrieveAsync(string id) => _mockData.FirstOrDefault(o => o.Id == id);
         
 
-        readonly static IEnumerable<Entity1> _mockData = new Entity1[]
+        readonly static List<Entity1> _mockData = new List<Entity1>()
         {
-            new Entity1("entity1-1"),
-            new Entity1("entity1-2")
+            new Entity1("1","entity1-1"),
+            new Entity1("2","entity1-2")
         };
     }
 }

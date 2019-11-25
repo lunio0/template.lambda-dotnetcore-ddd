@@ -1,7 +1,8 @@
 using Amazon.Lambda.APIGatewayEvents;
 using Amazon.Lambda.TestUtilities;
 using MyLambdaDotNetCoreProject.Api;
-using MyLambdaDotNetCoreProject.Domain.Aggregate.Entity1Aggregate;
+using MyLambdaDotNetCoreProject.Application.Queries.Readmodel;
+using MyLambdaDotNetCoreProject.Domain.Aggregates.Entity1Aggregate;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
@@ -21,7 +22,7 @@ namespace MyLambdaDotNetCoreProject.Tests
             // Invoke the lambda function and confirm the string was upper cased.
             var context = new TestLambdaContext();
             var response = await new Entity1Lambda().Get(new APIGatewayProxyRequest(), context);
-            var entities = JsonConvert.DeserializeObject<IEnumerable<Entity1>>(response.Body);
+            var entities = JsonConvert.DeserializeObject<IEnumerable<Entity1View>>(response.Body);
 
             Assert.NotEmpty(entities);
         }

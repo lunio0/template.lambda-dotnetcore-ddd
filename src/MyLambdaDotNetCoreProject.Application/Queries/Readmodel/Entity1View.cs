@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace MyLambdaDotNetCoreProject.Application.Query.Readmodel
+namespace MyLambdaDotNetCoreProject.Application.Queries.Readmodel
 {
     public class Entity1View
     {

@@ -2,7 +2,7 @@ using Amazon.Lambda.APIGatewayEvents;
 using Amazon.Lambda.TestUtilities;
 using AutoMapper;
 using MyLambdaDotNetCoreProject.Api;
-using MyLambdaDotNetCoreProject.Domain.Aggregate.Entity1Aggregate;
+using MyLambdaDotNetCoreProject.Domain.Aggregates.Entity1Aggregate;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;

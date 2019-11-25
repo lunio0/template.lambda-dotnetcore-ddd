@@ -1,11 +1,11 @@
-﻿using MyLambdaDotNetCoreProject.Application.Query.Readmodel;
-using MyLambdaDotNetCoreProject.Domain.Aggregate.Entity1Aggregate;
+﻿using MyLambdaDotNetCoreProject.Application.Queries.Readmodel;
+using MyLambdaDotNetCoreProject.Domain.Aggregates.Entity1Aggregate;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MyLambdaDotNetCoreProject.Application.Query
+namespace MyLambdaDotNetCoreProject.Application.Queries
 {
     public interface IEntity1Query
     {

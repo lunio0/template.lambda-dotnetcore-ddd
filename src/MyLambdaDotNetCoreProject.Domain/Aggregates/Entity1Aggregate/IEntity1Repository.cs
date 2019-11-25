@@ -1,11 +1,12 @@
-﻿using System;
+﻿using MyLambdaDotNetCoreProject.Domain.Seedwork;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MyLambdaDotNetCoreProject.Domain.Aggregate.Entity1Aggregate
+namespace MyLambdaDotNetCoreProject.Domain.Aggregates.Entity1Aggregate
 {
-    public interface IEntity1Repository
+    public interface IEntity1Repository: IRepository<Entity1>
     {
         void Create(Entity1 item);
         void Update(Entity1 item);

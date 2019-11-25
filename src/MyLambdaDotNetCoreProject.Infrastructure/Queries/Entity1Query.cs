@@ -1,13 +1,13 @@
 ﻿using AutoMapper;
-using MyLambdaDotNetCoreProject.Application.Query;
-using MyLambdaDotNetCoreProject.Application.Query.Readmodel;
-using MyLambdaDotNetCoreProject.Domain.Aggregate.Entity1Aggregate;
+using MyLambdaDotNetCoreProject.Application.Queries;
+using MyLambdaDotNetCoreProject.Application.Queries.Readmodel;
+using MyLambdaDotNetCoreProject.Domain.Aggregates.Entity1Aggregate;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MyLambdaDotNetCoreProject.Infrastructure.Query
+namespace MyLambdaDotNetCoreProject.Infrastructure.Queries
 {
     public class Entity1Query : IEntity1Query
     {

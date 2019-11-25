@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
-using MyLambdaDotNetCoreProject.Application.Query.Readmodel;
-using MyLambdaDotNetCoreProject.Domain.Aggregate.Entity1Aggregate;
+using MyLambdaDotNetCoreProject.Application.Queries.Readmodel;
+using MyLambdaDotNetCoreProject.Domain.Aggregates.Entity1Aggregate;
 using System;
 using System.Collections.Generic;
 using System.Text;
