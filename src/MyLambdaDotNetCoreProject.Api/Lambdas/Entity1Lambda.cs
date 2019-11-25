@@ -57,9 +57,9 @@ namespace MyLambdaDotNetCoreProject.Api
         {
             IEnumerable<Entity1View> result = await this._entity1Query.GetAll().ConfigureAwait(false);
 
-            return result is null? 
+            return result is null ?
                 new APIGatewayProxyResponse().SetNotfound()
-                : new APIGatewayProxyResponse().SetSuccess(result)
+                : new APIGatewayProxyResponse().SetSuccess(result);
         }
 
         [LambdaSerializer(typeof(JsonSerializer))]
@@ -68,9 +68,9 @@ namespace MyLambdaDotNetCoreProject.Api
             string id = request.PathParameters["id"];
             Entity1View result = await this._entity1Query.GetOne(id).ConfigureAwait(false);
 
-            return result is null?
+            return result is null ?
               new APIGatewayProxyResponse().SetNotfound()
-                : new APIGatewayProxyResponse().SetSuccess(result)
+                : new APIGatewayProxyResponse().SetSuccess(result);
         }
     }
 }
