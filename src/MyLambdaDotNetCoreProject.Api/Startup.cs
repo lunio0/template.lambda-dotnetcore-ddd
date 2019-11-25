@@ -6,6 +6,7 @@ using MyLambdaDotNetCoreProject.Application.Query;
 using MyLambdaDotNetCoreProject.Infrastructure.Query;
 using MyLambdaDotNetCoreProject.Domain.Aggregate.Entity1Aggregate;
 using MyLambdaDotNetCoreProject.Infrastructure.Repository;
+using AutoMapper;
 
 namespace MyLambdaDotNetCoreProject.Api
 {
@@ -30,6 +31,7 @@ namespace MyLambdaDotNetCoreProject.Api
 
             services
               .AddMediatR(typeof(GetEntity1RequestHandler).Assembly)
+              .AddAutoMapper(typeof(Startup).Assembly)
               .AddScoped<IEntity1Query,Entity1Query>()
               .AddScoped<IEntity1Repository, Entity1Repository>()
               ;

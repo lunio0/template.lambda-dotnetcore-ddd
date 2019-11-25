@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using MyLambdaDotNetCoreProject.Application.Query.Readmodel;
 using MyLambdaDotNetCoreProject.Domain.Aggregate.Entity1Aggregate;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace MyLambdaDotNetCoreProject.Application.Query
 {
-    public class GetEntity1RequestHandler : IRequestHandler<GetEntity1Request, IEnumerable<Entity1>>
+    public class GetEntity1RequestHandler : IRequestHandler<GetEntity1Request, IEnumerable<Entity1View>>
     {
         readonly IEntity1Query _entity1Query;
 
@@ -17,17 +18,17 @@ namespace MyLambdaDotNetCoreProject.Application.Query
             _entity1Query = entity1Query;
         }
 
-        async Task<IEnumerable<Entity1>> IRequestHandler<GetEntity1Request, IEnumerable<Entity1>>.Handle(GetEntity1Request request, CancellationToken cancellationToken)
+        public async Task<IEnumerable<Entity1View>> Handle(GetEntity1Request request, CancellationToken cancellationToken)
         {
             if (request.Id is null)
             {
-                return this._entity1Query.GetAll();
+                return await this._entity1Query.GetAll();
             }
             else
             {
-                Entity1 entity = this._entity1Query.GetOne(request.Id);
+                Entity1View entity = await this._entity1Query.GetOne(request.Id);
 
-                return new Entity1[] { entity };
+                return new Entity1View[] { entity };
             }
         }
     }

@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace MyLambdaDotNetCoreProject.Infrastructure.Repository
 {
@@ -12,9 +13,9 @@ namespace MyLambdaDotNetCoreProject.Infrastructure.Repository
 
         void IEntity1Repository.Update(Entity1 item) => throw new NotImplementedException();
 
-        IEnumerable<Entity1> IEntity1Repository.Retrieve() => _mockData;
+        async Task<IEnumerable<Entity1>> IEntity1Repository.RetrieveAsync() =>  _mockData;
 
-        Entity1 IEntity1Repository.Retrieve(string id) => _mockData.FirstOrDefault(o => o.Id == id);
+        async Task<Entity1> IEntity1Repository.RetrieveAsync(string id) => _mockData.FirstOrDefault(o => o.Id == id);
         
 
         readonly static IEnumerable<Entity1> _mockData = new Entity1[]
