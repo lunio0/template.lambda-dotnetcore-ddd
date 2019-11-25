@@ -10,8 +10,8 @@ namespace MyLambdaDotNetCoreProject.Api.Extensions
 {
     public static class APIGatewayProxyRequestExtenions
     {
-        public static T DeserializeBody<T>(this APIGatewayProxyRequest request) 
-            where T : class
+        public static T DeserializeBody<T>(this APIGatewayProxyRequest request) where T : class
+            
             => JsonConvert.DeserializeObject<T>(request?.Body, JsonNonPublicSettingProvider.Provide());
     }
 

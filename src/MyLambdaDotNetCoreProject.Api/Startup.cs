@@ -15,11 +15,18 @@ namespace MyLambdaDotNetCoreProject.Api
     {
         public static IServiceProvider BuildContainer()
         {
+            //template parameter used
+            var environmentName = System.Environment.GetEnvironmentVariable("environmentName");
+
+            if(environmentName is null)
+            {
+                throw new InvalidOperationException($"{nameof(environmentName)} not set");
+            }
+
             var configuration = new ConfigurationBuilder()
                                 .SetBasePath(Directory.GetCurrentDirectory())
                                 .AddEnvironmentVariables()
-                                //template parameter used
-                                .AddJsonFile($"appsettings.{System.Environment.GetEnvironmentVariable("appsetting")}.json")
+                                .AddJsonFile($"appsettings.{environmentName}.json")
                                 .Build();
 
             var serviceCollection = new ServiceCollection()

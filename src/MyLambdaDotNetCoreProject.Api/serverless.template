@@ -4,11 +4,11 @@
 	"Description" : "An AWS Serverless Application.",
 
 	"Parameters" : {
-	  "appsetting" : {
+	  "environmentName" : {
 		"Type" : "String",
 		"Default" : "Local",
 		"AllowedValues" : ["Local", "Production"],
-		"Description" : "appsetting file definer"
+		"Description" : "environment name for appsetting selection"
 	  }
 	},
 	"Resources" : {
@@ -23,7 +23,7 @@
 				"Policies": [ "AWSLambdaBasicExecutionRole" ],
 				"Environment" : {
 					"Variables" : {
-						"appsetting" : { "Ref" : "appsetting" }
+						"environmentName" : { "Ref" : "environmentName" }
 					}
 				},
 				"Events": {
@@ -48,7 +48,7 @@
 				"Policies": [ "AWSLambdaBasicExecutionRole" ],
 				"Environment" : {
 					"Variables" : {
-						"appsetting" : { "Ref" : "appsetting" }
+						"environmentName" : { "Ref" : "environmentName" }
 					}
 				},
 				"Events": {
@@ -73,7 +73,7 @@
 				"Policies": [ "AWSLambdaBasicExecutionRole" ],
 				"Environment" : {
 					"Variables" : {
-						"appsetting" : { "Ref" : "appsetting" }
+						"environmentName" : { "Ref" : "environmentName" }
 					}
 				},
 				"Events": {

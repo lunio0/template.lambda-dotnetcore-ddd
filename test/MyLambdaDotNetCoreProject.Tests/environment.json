@@ -1,0 +1,6 @@
+{
+  //see EnvironmentFixture.cs
+  "environmentVariables": {
+    "environmentName": "Local"
+  }
+}

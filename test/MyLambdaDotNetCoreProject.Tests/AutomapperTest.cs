@@ -1,15 +1,4 @@
-using Amazon.Lambda.APIGatewayEvents;
-using Amazon.Lambda.TestUtilities;
 using AutoMapper;
-using MyLambdaDotNetCoreProject.Api;
-using MyLambdaDotNetCoreProject.Domain.Aggregates.Entity1Aggregate;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
 using Xunit;
 
 namespace MyLambdaDotNetCoreProject.Tests

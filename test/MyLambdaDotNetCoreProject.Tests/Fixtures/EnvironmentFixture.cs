@@ -1,3 +1,4 @@
+using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
@@ -16,24 +17,18 @@ namespace MyLambdaDotNetCoreProject.Tests
     {
         public EnvironmentFixture()
         {
-            using (var file = File.OpenText("testSettings.json"))
+            using (var file = File.OpenText("environment.json"))
             {
-                var reader = new JsonTextReader(file);
-                var jo = JObject.Load(reader);
+                var jsonReader = new JsonTextReader(file);
 
-                var environmentVariables = jo
+                JObject.Load(jsonReader)
                     .GetValue("environmentVariables")
                     .Children()
                     .OfType<JProperty>()
-                    .Select(o => new {
-                        Name = o.Name,
-                        Value = o.Value.ToString()
-                    });
-
-                foreach (var variable in environmentVariables)
-                {
-                    Environment.SetEnvironmentVariable(variable.Name, variable.Value);
-                }
+                    .ToList()
+                    .ForEach(//set environment variables
+                        var => Environment.SetEnvironmentVariable(var.Name, var.Value.ToString())
+                    );
             }
         }
     }

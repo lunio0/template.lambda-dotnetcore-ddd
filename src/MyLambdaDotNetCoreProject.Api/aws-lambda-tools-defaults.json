@@ -13,6 +13,6 @@
     "s3-bucket"     : "dotnetcore2.1-lambda-sample",
     "stack-name"    : "dotnetcore2-lambda-sample",
     "template"      : "serverless.template",
-    "template-parameters" : "\"appsetting\"=\"Production\"",
+    "template-parameters" : "\"environmentName\"=\"Production\"",
     "framework"           : "netcoreapp2.1"
 }
