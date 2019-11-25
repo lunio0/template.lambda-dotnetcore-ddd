@@ -11,6 +11,8 @@ using Microsoft.Extensions.DependencyInjection;
 using MediatR;
 using MyLambdaDotNetCoreProject.Application.Queries;
 using MyLambdaDotNetCoreProject.Application.Queries.Readmodel;
+using MyLambdaDotNetCoreProject.Api.Extensions;
+using MyLambdaDotNetCoreProject.Application.Commands;
 
 [assembly: LambdaSerializer(typeof(JsonSerializer))]
 namespace MyLambdaDotNetCoreProject.Api
@@ -31,6 +33,21 @@ namespace MyLambdaDotNetCoreProject.Api
         {
             this._mediator = serviceProvider.GetRequiredService<IMediator>();
             this._entity1Query = serviceProvider.GetRequiredService<IEntity1Query>();
+        }
+
+        [LambdaSerializer(typeof(JsonSerializer))]
+        public async Task<APIGatewayProxyResponse> Create(APIGatewayProxyRequest request, ILambdaContext lambdaContext)
+        {
+            var command = request.DeserializeBody<CreateEntity1Command>();
+
+            if(command is null)
+            {
+                return new APIGatewayProxyResponse { StatusCode = 400 };
+            }
+
+            string newEntityId = await this._mediator.Send(command).ConfigureAwait(false);
+
+            return new APIGatewayProxyResponse { StatusCode = 200, Body = newEntityId };
         }
 
         [LambdaSerializer(typeof(JsonSerializer))]

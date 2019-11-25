@@ -12,6 +12,31 @@
 	  }
 	},
 	"Resources" : {
+		"CreateEntity1HttpFunction" : {
+			"Type" : "AWS::Serverless::Function",
+			"Properties": {
+				"Handler": "MyLambdaDotNetCoreProject.Api::MyLambdaDotNetCoreProject.Api.Entity1Lambda::Create",
+				"Runtime": "dotnetcore2.1",
+				"MemorySize": 256,
+				"Timeout": 30,
+				"Role": null,
+				"Policies": [ "AWSLambdaBasicExecutionRole" ],
+				"Environment" : {
+					"Variables" : {
+						"appsetting" : { "Ref" : "appsetting" }
+					}
+				},
+				"Events": {
+					"RootGet": {
+						"Type": "Api",
+						"Properties": {
+							"Path": "/entity1",
+							"Method": "POST"
+						}
+					}
+				}
+			}
+		},
 		"GetEntity1HttpFunction" : {
 			"Type" : "AWS::Serverless::Function",
 			"Properties": {
@@ -46,6 +71,11 @@
 				"Timeout": 30,
 				"Role": null,
 				"Policies": [ "AWSLambdaBasicExecutionRole" ],
+				"Environment" : {
+					"Variables" : {
+						"appsetting" : { "Ref" : "appsetting" }
+					}
+				},
 				"Events": {
 					"RootGet": {
 						"Type": "Api",

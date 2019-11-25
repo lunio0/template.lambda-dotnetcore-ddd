@@ -9,11 +9,11 @@ namespace MyLambdaDotNetCoreProject.Infrastructure.Repositories
 {
     public class Entity1Repository : IEntity1Repository
     {
-        void IEntity1Repository.Create(Entity1 item) => throw new NotImplementedException();
+        void IEntity1Repository.Create(Entity1 item) => _mockData.Add(item);
 
         void IEntity1Repository.Update(Entity1 item) => throw new NotImplementedException();
 
-        async Task<IEnumerable<Entity1>> IEntity1Repository.RetrieveAsync() =>  _mockData;
+        async Task<IEnumerable<Entity1>> IEntity1Repository.RetrieveAsync() => _mockData;
 
         async Task<Entity1> IEntity1Repository.RetrieveAsync(string id) => _mockData.FirstOrDefault(o => o.Id == id);
         

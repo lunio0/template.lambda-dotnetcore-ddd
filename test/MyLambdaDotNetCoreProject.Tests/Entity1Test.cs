@@ -17,7 +17,7 @@ namespace MyLambdaDotNetCoreProject.Tests
     public class Entity1Test : IClassFixture<EnvironmentFixture>
     {
         [Fact]
-        public async Task TestGetEntity()
+        public async Task TestGetAllEntity()
         {
             // Invoke the lambda function and confirm the string was upper cased.
             var context = new TestLambdaContext();
@@ -25,6 +25,17 @@ namespace MyLambdaDotNetCoreProject.Tests
             var entities = JsonConvert.DeserializeObject<IEnumerable<Entity1View>>(response.Body);
 
             Assert.NotEmpty(entities);
+        }
+        [Fact]
+        public async Task TestCreateEntity()
+        {
+            // Invoke the lambda function and confirm the string was upper cased.
+            var context = new TestLambdaContext();
+            var body = JsonConvert.SerializeObject(new { Name = "test name" });
+            var response = await new Entity1Lambda().Create(new APIGatewayProxyRequest() { Body = body }, context);
+            var newId = response.Body;
+
+            Assert.NotEmpty(newId);
         }
     }
 }
