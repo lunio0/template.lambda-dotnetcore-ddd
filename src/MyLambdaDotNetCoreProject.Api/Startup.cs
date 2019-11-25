@@ -31,6 +31,7 @@ namespace MyLambdaDotNetCoreProject.Api
 
             var serviceCollection = new ServiceCollection()
                                     .AddModules(configuration)
+                                    .AddDbContexts(configuration)
                                     .AddRepositories()
                                     .AddQueries()
                                     ;

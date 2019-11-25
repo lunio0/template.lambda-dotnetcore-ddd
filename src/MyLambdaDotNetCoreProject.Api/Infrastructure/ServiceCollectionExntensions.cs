@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using MyLambdaDotNetCoreProject.Application.Commands;
@@ -27,12 +28,31 @@ namespace MyLambdaDotNetCoreProject.Api.Infrastructure
         /// <param name="services"></param>
         /// <param name="configurationRoot"></param>
         /// <returns></returns>
-        public static IServiceCollection AddModules(this IServiceCollection services, IConfigurationRoot configurationRoot)
-        
+        public static IServiceCollection AddModules(this IServiceCollection services, IConfigurationRoot configuration)
+
             => services
                 .AddMediatR(applicationAssembly)
                 .AddAutoMapper(apiAssembly);
-        
+
+        /// <summary>
+        /// dbcontexts
+        /// </summary>
+        /// <param name="services"></param>
+        /// <param name="configurationRoot"></param>
+        /// <returns></returns>
+        public static IServiceCollection AddDbContexts(this IServiceCollection services, IConfigurationRoot configuration)
+
+            => services
+                //Postgres
+                //.AddDbContext<PostgreSqlDbContext>(
+                //    options => options.UseNpgsql(configuration.GetConnectionString("PostgreSqlConnectionString"))
+                //)
+                //Mysql
+                //.AddDbContext<MysqlDbContext>(
+                //    options => options.UseMySql(configuration.GetConnectionString("MysqlConnectionString"))
+                //)
+                ;
+
         /// <summary>
         /// domain aggregate repositories
         /// </summary>
@@ -52,6 +72,5 @@ namespace MyLambdaDotNetCoreProject.Api.Infrastructure
         
             => services
                 .AddScoped<IEntity1Query, Entity1Query>();
-        
     }
 }
