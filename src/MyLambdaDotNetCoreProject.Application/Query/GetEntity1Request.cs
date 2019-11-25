@@ -1,5 +1,5 @@
 ﻿using MediatR;
-using MyLambdaDotNetCoreProject.Domain.AggregateModels.Entity1Aggregate;
+using MyLambdaDotNetCoreProject.Domain.Aggregate.Entity1Aggregate;
 using System;
 using System.Collections.Generic;
 using System.Text;

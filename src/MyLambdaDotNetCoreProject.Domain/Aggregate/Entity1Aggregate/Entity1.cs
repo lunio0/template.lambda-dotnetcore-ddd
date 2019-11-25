@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace MyLambdaDotNetCoreProject.Domain.AggregateModels.Entity1Aggregate
+namespace MyLambdaDotNetCoreProject.Domain.Aggregate.Entity1Aggregate
 {
     public class Entity1
     {

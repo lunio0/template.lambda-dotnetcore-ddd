@@ -4,6 +4,8 @@ using System.IO;
 using MediatR;
 using MyLambdaDotNetCoreProject.Application.Query;
 using MyLambdaDotNetCoreProject.Infrastructure.Query;
+using MyLambdaDotNetCoreProject.Domain.Aggregate.Entity1Aggregate;
+using MyLambdaDotNetCoreProject.Infrastructure.Repository;
 
 namespace MyLambdaDotNetCoreProject.Api
 {
@@ -29,6 +31,7 @@ namespace MyLambdaDotNetCoreProject.Api
             services
               .AddMediatR(typeof(GetEntity1RequestHandler).Assembly)
               .AddScoped<IEntity1Query,Entity1Query>()
+              .AddScoped<IEntity1Repository, Entity1Repository>()
               ;
               //.AddTransient(typeof(IAwsClientFactory<>), typeof(AwsClientFactory<>))
               //.AddTransient<IItemRepository, ItemDynamoRepository>()

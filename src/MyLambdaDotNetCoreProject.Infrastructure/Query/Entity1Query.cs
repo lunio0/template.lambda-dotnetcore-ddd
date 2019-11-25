@@ -1,5 +1,5 @@
 ﻿using MyLambdaDotNetCoreProject.Application.Query;
-using MyLambdaDotNetCoreProject.Domain.AggregateModels.Entity1Aggregate;
+using MyLambdaDotNetCoreProject.Domain.Aggregate.Entity1Aggregate;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -8,14 +8,15 @@ namespace MyLambdaDotNetCoreProject.Infrastructure.Query
 {
     public class Entity1Query : IEntity1Query
     {
-        IEnumerable<Entity1> IEntity1Query.GetAll() 
-            => new Entity1[]
-            {
-                new Entity1("1"),
-                new Entity1("2")
-            };
+        readonly IEntity1Repository _entity1Repository;
 
-        Entity1 IEntity1Query.GetOne(string id)
-            => new Entity1("1");
+        public Entity1Query(IEntity1Repository entity1Repository)
+        {
+            this._entity1Repository = entity1Repository;
+        }
+
+        IEnumerable<Entity1> IEntity1Query.GetAll() => this._entity1Repository.Retrieve();
+
+        Entity1 IEntity1Query.GetOne(string id) => this._entity1Repository.Retrieve(id);
     }
 }

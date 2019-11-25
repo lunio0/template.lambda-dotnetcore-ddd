@@ -1,7 +1,7 @@
 using Amazon.Lambda.APIGatewayEvents;
 using Amazon.Lambda.TestUtilities;
 using MyLambdaDotNetCoreProject.Api;
-using MyLambdaDotNetCoreProject.Domain.AggregateModels.Entity1Aggregate;
+using MyLambdaDotNetCoreProject.Domain.Aggregate.Entity1Aggregate;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
@@ -15,10 +15,6 @@ namespace MyLambdaDotNetCoreProject.Tests
 {
     public class Entity1Test : IClassFixture<EnvironmentFixture>
     {
-        public Entity1Test()
-        {
-            
-        }
         [Fact]
         public async Task TestGetEntity()
         {
