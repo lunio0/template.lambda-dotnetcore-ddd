@@ -42,12 +42,14 @@ namespace MyLambdaDotNetCoreProject.Api
 
             if(command is null)
             {
-                return new APIGatewayProxyResponse { StatusCode = 400 };
+                return new APIGatewayProxyResponse().SetNotfound();
             }
+            else
+            {
+                string newEntityId = await this._mediator.Send(command).ConfigureAwait(false);
 
-            string newEntityId = await this._mediator.Send(command).ConfigureAwait(false);
-
-            return new APIGatewayProxyResponse { StatusCode = 200, Body = newEntityId };
+                return new APIGatewayProxyResponse().SetSuccess(newEntityId);
+            }
         }
 
         [LambdaSerializer(typeof(JsonSerializer))]
@@ -55,9 +57,9 @@ namespace MyLambdaDotNetCoreProject.Api
         {
             IEnumerable<Entity1View> result = await this._entity1Query.GetAll().ConfigureAwait(false);
 
-            return result is null?
-              new APIGatewayProxyResponse { StatusCode = 404 } 
-              : new APIGatewayProxyResponse { StatusCode = 200, Body = Newtonsoft.Json.JsonConvert.SerializeObject(result) };
+            return result is null? 
+                new APIGatewayProxyResponse().SetNotfound()
+                : new APIGatewayProxyResponse().SetSuccess(result)
         }
 
         [LambdaSerializer(typeof(JsonSerializer))]
@@ -66,9 +68,9 @@ namespace MyLambdaDotNetCoreProject.Api
             string id = request.PathParameters["id"];
             Entity1View result = await this._entity1Query.GetOne(id).ConfigureAwait(false);
 
-            return result is null ?
-              new APIGatewayProxyResponse { StatusCode = 404 }
-              : new APIGatewayProxyResponse { StatusCode = 200, Body = Newtonsoft.Json.JsonConvert.SerializeObject(result) };
+            return result is null?
+              new APIGatewayProxyResponse().SetNotfound()
+                : new APIGatewayProxyResponse().SetSuccess(result)
         }
     }
 }
