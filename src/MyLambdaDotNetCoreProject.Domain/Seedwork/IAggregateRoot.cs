@@ -4,6 +4,7 @@ using System.Text;
 
 namespace MyLambdaDotNetCoreProject.Domain.Seedwork
 {
-    public interface IAggregate
-    { }
+    //AggregateRoot marker interface
+    public interface IAggregateRoot { }
+
 }

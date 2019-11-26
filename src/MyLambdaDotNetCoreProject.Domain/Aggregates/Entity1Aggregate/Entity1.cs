@@ -5,7 +5,7 @@ using System.Text;
 
 namespace MyLambdaDotNetCoreProject.Domain.Aggregates.Entity1Aggregate
 {
-    public class Entity1: IAggregate
+    public class Entity1: IAggregateRoot
     {
         public Entity1(string name)
         {
