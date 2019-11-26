@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MyLambdaDotNetCoreProject.Application.Queries
 {
-    public interface IEntity1Query
+    public interface IEntity1Query: IQuery
     {
         Task<IEnumerable<Entity1View>> GetAll();
         Task<Entity1View> GetOne(string id);
