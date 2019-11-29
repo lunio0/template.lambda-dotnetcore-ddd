@@ -20,7 +20,7 @@ namespace MyLambdaDotNetCoreProject.Api.Extensions
 
         public static APIGatewayProxyResponse SetBadRequest(this APIGatewayProxyResponse response)
         {
-            response.StatusCode = 404;
+            response.StatusCode = 400;
 
             return response;
         }

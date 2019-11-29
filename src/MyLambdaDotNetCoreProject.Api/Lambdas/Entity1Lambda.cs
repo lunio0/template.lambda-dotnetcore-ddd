@@ -25,10 +25,14 @@ namespace MyLambdaDotNetCoreProject.Api
         /// <summary>
         /// Default constructor that Lambda will invoke.
         /// </summary>
-        public Entity1Lambda() : this(Startup.BuildContainer())
+        public Entity1Lambda() : this(Startup.BuildServiceProvider())
         {
         }
 
+        /// <summary>
+        /// Dependency injection for Lambda
+        /// </summary>
+        /// <param name="serviceProvider"></param>
         private Entity1Lambda(IServiceProvider serviceProvider)
         {
             this._mediator = serviceProvider.GetRequiredService<IMediator>();
@@ -42,7 +46,7 @@ namespace MyLambdaDotNetCoreProject.Api
 
             if(command is null)
             {
-                return new APIGatewayProxyResponse().SetNotfound();
+                return new APIGatewayProxyResponse().SetBadRequest();
             }
             else
             {

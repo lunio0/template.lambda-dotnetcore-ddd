@@ -4,6 +4,6 @@ using System.Text;
 
 namespace MyLambdaDotNetCoreProject.Domain.Seedwork
 {
-    public interface IRepository<T> where T: IAggregate
+    public interface IRepository<T> where T: IAggregateRoot
     { }
 }

@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace MyLambdaDotNetCoreProject.Api.Infrastructure.Automapper.CommandToRead
+namespace MyLambdaDotNetCoreProject.Api.Infrastructure.Automapper.DomainModelToReadModel
 {
     public class Entity1Profile: Profile
     {

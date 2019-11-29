@@ -13,7 +13,7 @@ namespace MyLambdaDotNetCoreProject.Api
 {
     class Startup
     {
-        public static IServiceProvider BuildContainer()
+        public static IServiceProvider BuildServiceProvider()
         {
             //template parameter used
             var environmentName = System.Environment.GetEnvironmentVariable("environmentName");
