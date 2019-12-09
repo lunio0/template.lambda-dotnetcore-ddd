@@ -6,11 +6,11 @@
         "dotnet lambda help",
         "All the command line options for the Lambda command can be specified in this file."
     ],
-    "profile"     : "dasein",
+    "profile"     : "jin",
     "region"      : "ap-northeast-2",
     "configuration" : "Release",
     "s3-prefix"     : "dotnetcore21/",
-    "s3-bucket"     : "dotnetcore2.1-lambda-sample",
+    "s3-bucket"     : "testsjdkfajsdlfkajsdl",
     "stack-name"    : "dotnetcore2-lambda-sample",
     "template"      : "serverless.template",
     "template-parameters" : "\"environmentName\"=\"Production\"",
